@@ -2,6 +2,7 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - lottie-ios (1.5.1)
   - Masonry (1.0.2)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
@@ -36,6 +37,7 @@ PODS:
 
 DEPENDENCIES:
   - FMDB
+  - lottie-ios
   - Masonry
   - MJExtension
   - MJRefresh
@@ -50,6 +52,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  lottie-ios: f680a7c4cb7a567ecf258fde0f967913aff111b8
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
@@ -61,6 +64,6 @@ SPEC CHECKSUMS:
   XMNetworking: bcc1d167c4386fb6bfefb0d6c7087f09333c2e09
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: f424100e0c7bf26de4bcce06a3d4d38cb742a36c
+PODFILE CHECKSUM: a77dc61677655f1b79b89fc01f961c30850173f8
 
 COCOAPODS: 1.2.1

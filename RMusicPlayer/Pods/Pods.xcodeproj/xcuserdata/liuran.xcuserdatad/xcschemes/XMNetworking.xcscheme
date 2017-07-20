@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '518EB41C22746D15CE01703EB7B3041A'
+               BlueprintIdentifier = 'E7DB4AE98EB39D9BB48FA42A80E98C25'
                BlueprintName = 'XMNetworking'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libXMNetworking.a'>

@@ -12,4 +12,5 @@ pod 'SFHFKeychainUtils'
 pod 'MJRefresh'
 pod 'RKNotificationHub'
 pod 'FMDB'
+pod 'lottie-ios'
 end
