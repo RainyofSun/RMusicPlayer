@@ -4,12 +4,12 @@ PODS:
   - FMDB/standard (2.6.2)
   - lottie-ios (1.5.1)
   - Masonry (1.0.2)
+  - MBProgressHUD (1.0.0)
   - MJExtension (3.0.13)
   - MJRefresh (3.1.12)
   - RKNotificationHub (2.0.4)
   - SFHFKeychainUtils (0.0.1)
   - SGNetObserver (1.0.0)
-  - SVProgressHUD (2.1.2)
   - UMengUShare/Core (6.4.3):
     - UMengUShare/Network
   - UMengUShare/Network (6.4.3)
@@ -23,6 +23,8 @@ PODS:
   - UMengUShare/Social/WeChat (6.4.3):
     - UMengUShare/Core
     - UMengUShare/Social/ReducedWeChat
+  - UMengUShare/UI (6.4.3):
+    - UMengUShare/Core
   - XMNetworking (1.0.2):
     - XMNetworking/Core (= 1.0.2)
     - XMNetworking/Lib (= 1.0.2)
@@ -39,14 +41,15 @@ DEPENDENCIES:
   - FMDB
   - lottie-ios
   - Masonry
+  - MBProgressHUD
   - MJExtension
   - MJRefresh
   - RKNotificationHub
   - SFHFKeychainUtils
   - SGNetObserver
-  - SVProgressHUD
   - UMengUShare/Social/QQ
   - UMengUShare/Social/WeChat
+  - UMengUShare/UI
   - XMNetworking
   - YYKit
 
@@ -54,16 +57,16 @@ SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   lottie-ios: f680a7c4cb7a567ecf258fde0f967913aff111b8
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   MJExtension: 5932755f451458eefa24239358817f8d291240c7
   MJRefresh: b96cdb21c4aa75a7b07654311ab2f315c497e806
   RKNotificationHub: 3765424499139c3d3885b681bb0837f072d12ae6
   SFHFKeychainUtils: 9576b411a79a058f4d5381ace6f3242b9a62e664
   SGNetObserver: 13ce794f68c9f1c1146a16712a89b4dc0e77a327
-  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
   UMengUShare: d39cb682598df87ebdd3c055d03d00eb0102d42c
   XMNetworking: bcc1d167c4386fb6bfefb0d6c7087f09333c2e09
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: a77dc61677655f1b79b89fc01f961c30850173f8
+PODFILE CHECKSUM: 1774cb450ea7cb1d5a4ef4f449be71cb69a1e9c6
 
 COCOAPODS: 1.2.1

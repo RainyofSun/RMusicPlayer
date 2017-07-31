@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "AppDelegate+AppService.h"
+#import "M_AppManager.h"
+#import "M_IMManager.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +19,18 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    //初始化window
+    [self initWindow];
+    //广告业
+    [M_AppManager appStart];
+    //umeng初始化
+    [self initUMeng];
+    //初始化app服务
+    [self initService];
+    //初始化用户系统
+    [self initUserManager];
+    //网络监听
+    [self monitorNetWorkStatus];
     return YES;
 }
 

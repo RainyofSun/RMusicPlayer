@@ -1,16 +1,17 @@
 platform:ios,8.0
 target 'RMusicPlayer' do
-pod 'XMNetworking'
 pod 'MJExtension'
-pod 'SVProgressHUD'
+pod 'MBProgressHUD'
 pod 'YYKit'
 pod 'Masonry'
 pod 'SGNetObserver'
 pod ‘UMengUShare/Social/WeChat'
 pod ‘UMengUShare/Social/QQ'
+pod ‘UMengUShare/UI’
 pod 'SFHFKeychainUtils'
 pod 'MJRefresh'
 pod 'RKNotificationHub'
 pod 'FMDB'
 pod 'lottie-ios'
+pod 'XMNetworking'
 end
