@@ -25,6 +25,17 @@
     [self.tabbarItem removeObserver:self forKeyPath:@"selectedImage"];
 }
 
+-(instancetype)initWithFrame:(CGRect)frame{
+    if (self = [super initWithFrame:frame]) {
+        self.imageView.contentMode = UIViewContentModeCenter;
+        self.titleLabel.textAlignment = NSTextAlignmentCenter;
+        
+        self.tabbarBadge = [[R_TabbarBadge alloc] init];
+        [self addSubview:self.tabbarBadge];
+    }
+    return self;
+}
+
 -(instancetype)initWithItemImageRatio:(CGFloat)itemImageRatio{
     if (self = [super init]) {
         self.itemImageRatio = itemImageRatio;

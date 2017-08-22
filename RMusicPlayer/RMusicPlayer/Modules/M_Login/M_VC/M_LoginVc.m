@@ -7,8 +7,13 @@
 //
 
 #import "M_LoginVc.h"
+#import "M_LoginView.h"
+#import "M_LoginAVManager.h"
 
-@interface M_LoginVc ()
+@interface M_LoginVc ()<M_LoginViewDelegate>
+
+/** 登录界面UI */
+@property (nonatomic,strong) M_LoginView *loginView;
 
 @end
 
@@ -16,22 +21,51 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self loadLoginAV];
+    [self.view addSubview:self.loginView];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    [[M_LoginAVManager loginManager] destroyAVPlayer];
+}
+
+#pragma mark - 加载登录视频画面
+-(void)loadLoginAV{
+    NSString* boundlePath = [[NSBundle mainBundle] pathForResource:@"M_LoginRes" ofType:@"bundle"];
+    NSString* resUrl = [boundlePath stringByAppendingPathComponent:@"register_guide_video.mp4"];
+    [[M_LoginAVManager loginManager] loginGiudeRes:resUrl superView:self.view];
+}
+
+#pragma mark - M_LoginViewDelegate
+-(void)loginApp:(NSDictionary *)sender{
+    
+}
+
+-(void)loginVistor:(id)sender{
+    KPostNotification(KNotificationLoginStateChange, @YES);
+}
+
+-(void)forgetPassword:(id)sender{
+    
+}
+
+-(void)registApp:(id)sender{
+    
+}
+
+#pragma mark - getter
+-(M_LoginView *)loginView{
+    if (!_loginView) {
+        _loginView = [[M_LoginView alloc] initWithFrame:self.view.bounds];
+        _loginView.delegate = self;
+    }
+    return _loginView;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

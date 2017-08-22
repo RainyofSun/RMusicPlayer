@@ -7,7 +7,6 @@
 //
 
 #import "R_TabbarBadge.h"
-#import "UtilsMacros.h"
 
 @implementation R_TabbarBadge
 
@@ -26,7 +25,7 @@
 }
 
 -(void)setBadgeValue:(NSString *)badgeValue{
-    _badgeValue = badgeValue;
+    _badgeValue = [badgeValue copy];
     self.hidden = !(BOOL)self.badgeValue;
     if (self.badgeValue) {
         [self setTitle:badgeValue forState:UIControlStateNormal];
@@ -45,7 +44,7 @@
             frame.size.height = frame.size.width;
         }
         
-        frame.origin.x = 58.0f * (KScreenWidth / self.tabbarItemCount) /375.0f * 4.0f;
+        frame.origin.x = 58.0f * (KScreenWidth / self.tabbarItemCount) / 375.0f * 4.0f;
         frame.origin.y = 2.0f;
         self.frame = frame;
     }

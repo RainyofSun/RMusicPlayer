@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "R_MianTabbarController.h"
 
 /**
  * 这里只做调用，具体实现放在AppDelegate+AppService中 或者Manager中，防止代码过多不清晰

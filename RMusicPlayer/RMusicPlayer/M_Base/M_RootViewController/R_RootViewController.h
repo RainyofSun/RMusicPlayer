@@ -10,6 +10,7 @@
 
 #import <UIKit/UIKit.h>
 #import "UtilsMacros.h"
+#import "CommonMacros.h"
 #import <YYKit.h>
 
 @interface R_RootViewController : UIViewController
@@ -22,10 +23,12 @@
 /**<#object#>*/
 @property (nonatomic,strong) UICollectionView *rootCollectionView;
 
-/** 是否需要返回按钮,默认是YES */
+/** 是否需要返回按钮 */
 @property (nonatomic,assign) BOOL R_IsShowLiftBack;
 /** 是否隐藏导航栏 */
-@property (nonatomic,assign) BOOL *R_IsHideNavBar;
+@property (nonatomic,assign) BOOL R_IsHideNavBar;
+/** 是否需要显示tabbar */
+@property (nonatomic,assign) BOOL R_IsHideTabBar;
 
 /**
  * 登录跳转
@@ -76,7 +79,7 @@
  * @param action        动作
  * @param tags          tags 数组 回调区分用
  */
--(void)R_addNavigationItemWithImageNames:(NSArray*)imageNames isLeft:(BOOL)isLeft target:(id)target action:(SEL)action tags:(NSArray*)tags;
+-(void)R_AddNavigationItemWithImageNames:(NSArray*)imageNames isLeft:(BOOL)isLeft target:(id)target action:(SEL)action tags:(NSArray*)tags;
 
 /**
  * 默认返回按钮的点击事件，默认是返回，子类可重写

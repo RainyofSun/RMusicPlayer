@@ -7,10 +7,7 @@
 //
 
 #import "R_RootViewController.h"
-#import "R_RootNavController.h"
 #import "M_LoginVc.h"
-#import "M_LibMacros.h"
-#import "FontAndColorMacros.h"
 
 @interface R_RootViewController ()
 
@@ -25,8 +22,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = KWhiteColor;
-    //是否显示返回按钮
-    self.R_IsShowLiftBack = YES;
     self.statusBarStyle = UIStatusBarStyleLightContent;
 }
 
@@ -161,6 +156,14 @@
     }
 }
 
+/**
+ * 是否需要显示tabbar
+ */
+-(void)setR_IsHideTabBar:(BOOL)R_IsHideTabBar{
+    _R_IsHideTabBar = R_IsHideTabBar;
+    self.tabBarController.tabBar.hidden = R_IsHideTabBar ? YES : NO;
+}
+
 -(void)backBtnClicked{
     if (self.presentationController) {
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -169,14 +172,14 @@
     }
 }
 
--(void)R_addNavigationItemWithImageNames:(NSArray *)imageNames isLeft:(BOOL)isLeft target:(id)target action:(SEL)action tags:(NSArray *)tags{
+-(void)R_AddNavigationItemWithImageNames:(NSArray *)imageNames isLeft:(BOOL)isLeft target:(id)target action:(SEL)action tags:(NSArray *)tags{
     NSMutableArray* items = [NSMutableArray array];
     NSInteger i = 0;
     for (NSString* imageName in imageNames) {
         UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
         [btn setImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
         btn.frame = CGRectMake(0, 0, 30, 30);
-        btn.imageEdgeInsets = isLeft ? UIEdgeInsetsMake(0, -10, 0, 10) : UIEdgeInsetsMake(0, 10, 0, -10);
+        btn.imageEdgeInsets = isLeft ? UIEdgeInsetsMake(0, 3, 0, 3) : UIEdgeInsetsMake(0, 10, 0, -10);
         
         [btn addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
         btn.tag = [tags[i++] integerValue];

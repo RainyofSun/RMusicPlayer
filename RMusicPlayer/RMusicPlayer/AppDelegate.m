@@ -8,8 +8,6 @@
 
 #import "AppDelegate.h"
 #import "AppDelegate+AppService.h"
-#import "M_AppManager.h"
-#import "M_IMManager.h"
 
 @interface AppDelegate ()
 

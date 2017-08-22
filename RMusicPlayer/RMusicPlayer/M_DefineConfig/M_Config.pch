@@ -1,0 +1,37 @@
+//
+//  M_Config.pch
+//  RMusicPlayer
+//
+//  Created by 刘冉 on 2017/8/3.
+//  Copyright © 2017年 刘冉. All rights reserved.
+//
+
+#ifndef M_Config_pch
+#define M_Config_pch
+
+#pragma mark --------------   基类文件    ---------------
+#import "R_MianTabbarController.h"
+#import "R_RootNavController.h"
+#import "R_RootWebViewController.h"
+
+#pragma mark --------------   管理类文件  ---------------
+#import "M_AppManager.h"
+#import "M_IMManager.h"
+#import "M_UserManager.h"
+
+
+#pragma mark --------------   需要使用的头文件    ----------------
+#import "CommonMacros.h"
+#import "FontAndColorMacros.h"
+#import "ThirdMacros.h"
+#import "URLMacros.h"
+#import "UtilsMacros.h"
+#import "M_LibMacros.h"
+
+
+
+#pragma mark --------------   工具类文件    ------------------
+#import "MBProgressHUD+M_HUD.h"
+#import <LLSlideMenu.h>
+
+#endif /* M_Config_pch */

@@ -7,7 +7,6 @@
 //
 
 #import "M_FPSLabel.h"
-#import <YYKit.h>
 
 #define kSize   CGSizeMake(55,20)
 

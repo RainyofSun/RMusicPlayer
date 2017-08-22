@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '5D5BD041BE42A1C274A9820595EA3AE8'
+               BlueprintIdentifier = '8993DD03CAF77435DBF1CB672ABC2469'
                BlueprintName = 'SGNetObserver'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libSGNetObserver.a'>

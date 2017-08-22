@@ -7,7 +7,6 @@
 //
 
 #import "M_AdPageView.h"
-#import "UtilsMacros.h"
 
 @interface M_AdPageView ()
 
@@ -17,6 +16,8 @@
 @property (nonatomic,strong) UIButton *countBtn;
 /** 计时器 */
 @property (nonatomic,strong) NSTimer *countTimer;
+/** 倒计时秒数 */
+@property (nonatomic,assign) int countTime;
 /** 点击手势回调 */
 @property (nonatomic,copy) TapBlock tapBlock;
 
@@ -47,7 +48,7 @@ static int const showtime = 0;//广告显示的时间
         CGFloat btnW = 60;
         CGFloat btnH = 30;
         _countBtn = [[UIButton alloc] initWithFrame:CGRectMake(KScreenWidth - btnW - 24, btnH, btnW, btnH)];
-        [_countBtn addTarget:self action:@selector(dissmiss) forControlEvents:UIControlEventTouchUpInside];
+        [_countBtn addTarget:self action:@selector(dissMiss) forControlEvents:UIControlEventTouchUpInside];
         _countBtn.titleLabel.font = [UIFont systemFontOfSize:15];
         [_countBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         _countBtn.backgroundColor = [UIColor colorWithRed:38/255.0 green:38/255.0 blue:38/255.0 alpha:0.6];
@@ -70,6 +71,59 @@ static int const showtime = 0;//广告显示的时间
         [self getAdvertisingImage];
     }
     return self;
+}
+
+/**
+ * 跳转广告详情
+ */
+-(void)pushToAd{
+    [self dissMiss];
+    if (self.tapBlock) {
+        self.tapBlock();
+    }
+}
+
+/**
+ * 广告业倒计时按钮
+ */
+-(void)countDown{
+    _countTime --;
+    [_countBtn setTitle:[NSString stringWithFormat:@"跳过%d",_countTime] forState:UIControlStateNormal];
+    _countTime <= 0 ? [self dissMiss] : nil;
+}
+
+/**
+ * 倒计时结束 移除广告页
+ */
+-(void)dissMiss{
+    [self.countTimer invalidate];
+    self.countTimer = nil;
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        self.alpha = 0.f;
+    } completion:^(BOOL finished) {
+        [self removeFromSuperview];
+    }];
+}
+
+/**
+ * 展示广告页
+ */
+-(void)show{
+    if (showtime < 0 ) {
+        return;
+    }
+    [self startTimer];
+    UIWindow* window = [UIApplication sharedApplication].keyWindow;
+    [window addSubview:self];
+}
+
+/**
+ * 开启倒计时
+ */
+-(void)startTimer{
+    _countTime = showtime;
+    [[NSRunLoop mainRunLoop] addTimer:self.countTimer forMode:NSRunLoopCommonModes];
 }
 
 /**

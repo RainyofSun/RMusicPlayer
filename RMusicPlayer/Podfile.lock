@@ -2,6 +2,7 @@ PODS:
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
+  - LLSlideMenu (1.0.6)
   - lottie-ios (1.5.1)
   - Masonry (1.0.2)
   - MBProgressHUD (1.0.0)
@@ -39,6 +40,7 @@ PODS:
 
 DEPENDENCIES:
   - FMDB
+  - LLSlideMenu (~> 1.0.6)
   - lottie-ios
   - Masonry
   - MBProgressHUD
@@ -55,6 +57,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
+  LLSlideMenu: c36309289c462544e58dc83b675b1a38be735a99
   lottie-ios: f680a7c4cb7a567ecf258fde0f967913aff111b8
   Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
@@ -67,6 +70,6 @@ SPEC CHECKSUMS:
   XMNetworking: bcc1d167c4386fb6bfefb0d6c7087f09333c2e09
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 1774cb450ea7cb1d5a4ef4f449be71cb69a1e9c6
+PODFILE CHECKSUM: 4e3e8666dbc03b6facc3870fc478a8d700852f1d
 
 COCOAPODS: 1.2.1

@@ -1,9 +1,9 @@
 //
 //  define.h
-//  MiAiApp
+//  RMusicPlayer
 //
-//  Created by 徐阳 on 2017/5/18.
-//  Copyright © 2017年 徐阳. All rights reserved.
+//  Created by 刘冉 on 2017/5/18.
+//  Copyright © 2017年 刘冉. All rights reserved.
 //
 
 // 全局工具类宏定义
@@ -79,11 +79,15 @@
 #define KClearColor [UIColor clearColor]
 #define KWhiteColor [UIColor whiteColor]
 #define KBlackColor [UIColor blackColor]
-#define KGrayColor [UIColor grayColor]
+#define KGrayColor  [UIColor grayColor]
 #define KGray2Color [UIColor lightGrayColor]
-#define KBlueColor [UIColor blueColor]
-#define KRedColor [UIColor redColor]
+#define KBlueColor  [UIColor blueColor]
+#define KRedColor   [UIColor redColor]
+#define kRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
 #define kRandomColor    KRGBColor(arc4random_uniform(256)/255.0,arc4random_uniform(256)/255.0,arc4random_uniform(256)/255.0)        //随机色生成
+
+//基调蓝色
+#define AppMainBlue kRGBColor(24, 154, 214)
 
 //字体
 #define BOLDSYSTEMFONT(FONTSIZE)[UIFont boldSystemFontOfSize:FONTSIZE]

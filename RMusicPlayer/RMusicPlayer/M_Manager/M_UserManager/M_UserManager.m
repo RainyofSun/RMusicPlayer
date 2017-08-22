@@ -7,9 +7,7 @@
 //
 
 #import "M_UserManager.h"
-#import "CommonMacros.h"
 #import <UMSocialCore/UMSocialCore.h>
-#import "M_LibMacros.h"
 
 @implementation M_UserManager
 

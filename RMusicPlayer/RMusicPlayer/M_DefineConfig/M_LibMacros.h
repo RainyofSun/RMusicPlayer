@@ -23,5 +23,6 @@
 #import "OpenUDID.h"
 #import <XMNetworking.h>
 #import "MBProgressHUD+M_HUD.h"
+#import <Masonry.h>
 
 #endif /* M_LibMacros_h */

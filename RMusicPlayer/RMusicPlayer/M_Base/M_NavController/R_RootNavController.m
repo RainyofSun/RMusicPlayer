@@ -9,10 +9,6 @@
 #import "R_RootNavController.h"
 #import "XYTransitionProtocol.h"
 #import "XYTransition.h"
-#import "UtilsMacros.h"
-#import "FontAndColorMacros.h"
-#import <UIColor+YYAdd.h>
-#import "R_RootViewController.h"
 
 @interface R_RootNavController ()<UINavigationControllerDelegate,UIGestureRecognizerDelegate>
 
@@ -21,7 +17,7 @@
 /**<#object#>*/
 @property (nonatomic,strong) UIPercentDrivenInteractiveTransition *interactivePopTranstion;
 /**<#object#>*/
-@property (nonatomic,strong) UIScreenEdgePanGestureRecognizer *popRecognizer;
+@property (nonatomic,strong) UIPanGestureRecognizer *popRecognizer;/// UIPanGestureRecognizer 比 UIScreenEdgePanGestureRecognizer 触发更灵敏
 /** 是否开启系统右滑返回 */
 @property (nonatomic,assign) BOOL isSystemSlidBack;
 
@@ -38,7 +34,6 @@
     [navBar setBarTintColor:CNavBgColor];
     [navBar setTintColor:[UIColor whiteColor]];
     [navBar setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor],NSFontAttributeName : [UIFont systemFontOfSize:18]}];
-    
 }
 
 - (void)viewDidLoad {
@@ -46,8 +41,8 @@
     self.popDelegate = self.interactivePopGestureRecognizer.delegate;
     self.delegate = self;
     self.interactivePopGestureRecognizer.enabled = YES;
-    _popRecognizer = [[UIScreenEdgePanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTranstion:)];
-    _popRecognizer.edges = UIRectEdgeLeft;
+    _popRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handleNavigationTranstion:)];
+    
     [_popRecognizer setEnabled:YES];
     [self.view addGestureRecognizer:_popRecognizer];
 }
@@ -178,10 +173,13 @@
 }
 
 #pragma mark - UIGestureRecognizer handers
--(void)handleNavigationTranstion:(UIScreenEdgePanGestureRecognizer*)reconger{
+-(void)handleNavigationTranstion:(UIPanGestureRecognizer*)reconger{
     CGFloat progress = [reconger translationInView:self.view].x / self.view.bounds.size.width;
     NSLog(@"右划%0.2f",progress);
-    
+    if (self.viewControllers.count == 1) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:kMyMenuShow object:reconger];
+        return;
+    }
     if (reconger.state == UIGestureRecognizerStateBegan) {
         self.interactivePopTranstion = [[UIPercentDrivenInteractiveTransition alloc] init];
         [self popViewControllerAnimated:YES];

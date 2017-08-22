@@ -1,9 +1,9 @@
 //
 //  URLMacros.h
-//  MiAiApp
+//  RMusicPlayer
 //
-//  Created by 徐阳 on 2017/5/18.
-//  Copyright © 2017年 徐阳. All rights reserved.
+//  Created by 刘冉 on 2017/5/18.
+//  Copyright © 2017年 刘冉. All rights reserved.
 //
 
 
@@ -32,7 +32,7 @@
 
 /**开发服务器*/
 #define URL_main @"http://192.168.20.31:20000"
-//#define URL_main @"http://192.168.11.122:8090" //展鹏
+//#define URL_main @"http://192.168.11.122:8090" 
 
 #elif TestSever
 

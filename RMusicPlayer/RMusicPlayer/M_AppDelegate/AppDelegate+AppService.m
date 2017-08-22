@@ -9,12 +9,6 @@
 #import "AppDelegate+AppService.h"
 #import <UMSocialCore/UMSocialCore.h>
 #import "M_LoginVc.h"
-#import "CommonMacros.h"
-#import "M_LibMacros.h"
-#import "M_UserManager.h"
-#import "R_RootNavController.h"
-#import "M_AppManager.h"
-#import "ThirdMacros.h"
 
 @implementation AppDelegate (AppService)
 
@@ -85,7 +79,10 @@
     } else {
         //登录失败加载登录页面控制器
         self.mainTabBar = nil;
-        R_RootNavController* loginNav = [[R_RootNavController alloc] initWithRootViewController:[M_LoginVc new]];
+        M_LoginVc* login = [[M_LoginVc alloc] init];
+        //隐藏导航栏
+        login.R_IsHideNavBar = YES;
+        R_RootNavController* loginNav = [[R_RootNavController alloc] initWithRootViewController:login];
         self.window.rootViewController = loginNav;
     }
     //展示FPS
