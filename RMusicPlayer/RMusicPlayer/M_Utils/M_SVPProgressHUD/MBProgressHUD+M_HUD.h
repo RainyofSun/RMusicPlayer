@@ -32,7 +32,8 @@
 
 +(void)hideHUD;
 
-+(void)showTopTipMessage:(NSString*)message;
-+(void)showTopTipMessage:(NSString *)message isWindow:(BOOL)isWindow;
+//顶部弹出提示
++(void)showTopTipMessage:(NSString *)msg;
++(void)showTopTipMessage:(NSString *)msg isWindow:(BOOL) isWindow;
 
 @end

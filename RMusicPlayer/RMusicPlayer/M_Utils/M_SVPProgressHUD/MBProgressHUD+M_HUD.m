@@ -7,7 +7,6 @@
 //
 
 #import "MBProgressHUD+M_HUD.h"
-#import "AppDelegate+AppService.h"
 
 /**
  * 默认隐藏时间
@@ -124,22 +123,21 @@ const NSInteger hideTime = 2;
     [self hideHUDForView:[kAppDelegate getCurrentUIVC].view animated:YES];
 }
 
-#pragma mark ----------------------  顶部tip  -------------------------
-+(void)showTopTipMessage:(NSString *)message{
-    [self showTopTipMessage:message isWindow:NO];
+#pragma mark ————— 顶部tip —————
++ (void)showTopTipMessage:(NSString *)msg {
+    [self showTopTipMessage:msg isWindow:NO];
 }
-
-+(void)showTopTipMessage:(NSString *)message isWindow:(BOOL)isWindow{
-    CGFloat paddIng = 10;
++ (void)showTopTipMessage:(NSString *)msg isWindow:(BOOL) isWindow{
+    CGFloat padding = 10;
     
-    YYLabel* label = [YYLabel new];
-    label.text = message;
+    YYLabel *label = [YYLabel new];
+    label.text = msg;
     label.font = [UIFont systemFontOfSize:16];
     label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = KWhiteColor;
+    label.textColor = [UIColor whiteColor];
     label.backgroundColor = [UIColor colorWithRed:0.033 green:0.685 blue:0.978 alpha:0.8];
     label.width = KScreenWidth;
-    label.textContainerInset = UIEdgeInsetsMake(paddIng + paddIng, paddIng, 0, paddIng);
+    label.textContainerInset = UIEdgeInsetsMake(padding+padding, padding, 0, padding);
     
     if (isWindow) {
         label.height = 64;
@@ -149,15 +147,16 @@ const NSInteger hideTime = 2;
         [UIView animateWithDuration:0.3 animations:^{
             label.top = 0;
         } completion:^(BOOL finished) {
-           [UIView animateWithDuration:0.2 delay:2 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-               label.bottom = 0;
-           } completion:^(BOOL finished) {
-               [label removeFromSuperview];
-           }];
+            [UIView animateWithDuration:0.2 delay:2 options:UIViewAnimationOptionCurveEaseInOut animations:^{
+                label.bottom = 0;
+            } completion:^(BOOL finished) {
+                [label removeFromSuperview];
+            }];
         }];
-    } else {
-        label.height = [message heightForFont:label.font width:kAppWindow.width] + 2 * paddIng;
-        label.bottom = kiOS7Later ? 64 : 0;
+        
+    }else{
+        label.height = [msg heightForFont:label.font width:label.width] + 2 * padding;
+        label.bottom = (kiOS7Later ? 64 : 0);
         [[kAppDelegate getCurrentUIVC].view addSubview:label];
         
         [UIView animateWithDuration:0.3 animations:^{
@@ -169,6 +168,7 @@ const NSInteger hideTime = 2;
                 [label removeFromSuperview];
             }];
         }];
+        
     }
 }
 

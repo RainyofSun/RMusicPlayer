@@ -8,13 +8,17 @@
 
 #import "M_NewsVC.h"
 #import "M_MineVC.h"
+#import "M_MusicVC.h"
+#import "M_ShowMusicView.h"
 
-@interface M_NewsVC ()
+@interface M_NewsVC ()<M_ShowMusicViewDelegate>
 
 /** 我的侧滑菜单 */
 @property (nonatomic,strong) LLSlideMenu *slideMenu;
 /** 我的界面 */
 @property (nonatomic,strong) M_MineVC *mineView;
+/** 唤起音乐界面 */
+@property (nonatomic,strong) M_ShowMusicView *showMusic;
 /** 侧滑手势的偏移 */
 @property (nonatomic,strong) UIPercentDrivenInteractiveTransition *percent;
 
@@ -30,6 +34,11 @@
     [self.slideMenu addSubview:self.mineView.view];
     [self setUpNav];
     [self addObserver];
+    [self showMusic];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
 }
 
 -(void)dealloc{
@@ -82,6 +91,19 @@
     }
 }
 
+#pragma mark - M_ShowMusicViewDelegate
+-(void)touchMusic:(id)sender{
+    [self presentViewController:[[M_MusicVC alloc] init] animated:YES completion:nil];
+}
+
+-(void)startPlayMusic:(id)sender{
+    
+}
+
+-(void)showLocalMusicList:(id)sender{
+    
+}
+
 #pragma mark - getter
 -(LLSlideMenu *)slideMenu{
     if (!_slideMenu) {
@@ -104,6 +126,13 @@
         _mineView.view.frame = CGRectMake(0, 0, KScreenWidth/13*7, KScreenHeight);
     }
     return _mineView;
+}
+
+-(M_ShowMusicView *)showMusic{
+    if (!_showMusic) {
+        _showMusic = [M_ShowMusicView showMusicView:self.view delegate:self];
+    }
+    return _showMusic;
 }
 
 - (void)didReceiveMemoryWarning {

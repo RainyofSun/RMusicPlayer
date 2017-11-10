@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>EZAudio.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>FMDB.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -82,7 +87,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>05631AB6B2053570687D1B7CBA6B86A6</key>
+		<key>1F0A466B25F942570A6A8D8C53CCB843</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3C8B5A0AF4D0FB4E231BB061B0439654</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>445B997DC2D2CD239C24098CB41E0956</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -92,22 +107,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>62C9C558D1097DD6A868A037CD697816</key>
+		<key>5EC2303D3315083C0C5EF9DD9B097DC6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>84162125EE9FC449FFF57749037BCB13</key>
+		<key>69E6000010B42DA54CF5E8573AFB15B0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>8642CC820CE8C5B88C113D7F47AF4BC3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>8993DD03CAF77435DBF1CB672ABC2469</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -122,17 +132,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A621DB07D35649EF03954E609C1C09E7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B10FA2522FADFD414730E3B621B868D4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C368BFBE743733612CDB9A7AF37E751D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F574F91788792B2F29CCF4A58CF8F3D2</key>
+		<key>FC95D969FEC6C0B643CA22FFD82493AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

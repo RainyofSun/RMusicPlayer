@@ -13,6 +13,9 @@
 #import "R_MianTabbarController.h"
 #import "R_RootNavController.h"
 #import "R_RootWebViewController.h"
+#import "AppDelegate.h"
+#import "AppDelegate+AppService.h"
+#import "AppDelegate+PushService.h"
 
 #pragma mark --------------   管理类文件  ---------------
 #import "M_AppManager.h"
@@ -33,5 +36,6 @@
 #pragma mark --------------   工具类文件    ------------------
 #import "MBProgressHUD+M_HUD.h"
 #import <LLSlideMenu.h>
+#import "M_BaseImageView.h"
 
 #endif /* M_Config_pch */

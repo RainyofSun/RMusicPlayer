@@ -1,4 +1,5 @@
 PODS:
+  - EZAudio/Core (1.1.5)
   - FMDB (2.6.2):
     - FMDB/standard (= 2.6.2)
   - FMDB/standard (2.6.2)
@@ -39,6 +40,7 @@ PODS:
   - YYKit/no-arc (1.0.9)
 
 DEPENDENCIES:
+  - EZAudio/Core
   - FMDB
   - LLSlideMenu (~> 1.0.6)
   - lottie-ios
@@ -56,6 +58,7 @@ DEPENDENCIES:
   - YYKit
 
 SPEC CHECKSUMS:
+  EZAudio: 3b1cb4b6d7ebca68f0c2478576d75940aad4aa99
   FMDB: 854a0341b4726e53276f2a8996f06f1b80f9259a
   LLSlideMenu: c36309289c462544e58dc83b675b1a38be735a99
   lottie-ios: f680a7c4cb7a567ecf258fde0f967913aff111b8
@@ -70,6 +73,6 @@ SPEC CHECKSUMS:
   XMNetworking: bcc1d167c4386fb6bfefb0d6c7087f09333c2e09
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
-PODFILE CHECKSUM: 4e3e8666dbc03b6facc3870fc478a8d700852f1d
+PODFILE CHECKSUM: afbdee4b7336f5d9bfc233a4fa97c6820167a7b9
 
 COCOAPODS: 1.2.1

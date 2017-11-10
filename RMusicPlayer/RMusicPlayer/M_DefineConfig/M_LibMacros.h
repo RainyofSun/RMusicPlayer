@@ -24,5 +24,6 @@
 #import <XMNetworking.h>
 #import "MBProgressHUD+M_HUD.h"
 #import <Masonry.h>
+#import <EZAudio.h>
 
 #endif /* M_LibMacros_h */
